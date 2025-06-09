@@ -1,6 +1,6 @@
-# 🌐 Crystalline — Minimal, Math-Centric Landing Page
+# 🌐 Crystalline — Minimal, Science-Centric Landing Page
 
-Crystalline is a clean, modern landing page designed using **Tailwind CSS**. Ideal for math-focused or educational platforms, it blends clarity with customization. The design emphasizes readability, minimalist aesthetics, and an engaging user interface.
+Crystalline is a clean, modern landing page designed using **Tailwind CSS**. Ideal for educational platforms, it blends clarity with customization. The design emphasizes readability, minimalist aesthetics, and an engaging user interface.
 
 ---
 
