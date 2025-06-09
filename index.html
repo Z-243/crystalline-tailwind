@@ -1,145 +1,171 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Crystalline</title>
+
+    <!-- ✅ Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Press+Start+2P&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <style>
-        .bgGrid {
-            /* to create a background grid */
-            background-size: 50px 40px;
-            background-image: linear-gradient(to right, #eef2ff 1.5px, transparent 1px), linear-gradient(to bottom, #eef2ff 1.5px, transparent 1px);
-        }
+      .bgGrid {
+        /* to create a background grid */
+        background-size: 50px 40px;
+        background-image: linear-gradient(
+            to right,
+            #eef2ff 1.5px,
+            transparent 1px
+          ),
+          linear-gradient(to bottom, #eef2ff 1.5px, transparent 1px);
+      }
 
-        * {
-            font-family: 'JetBrains Mono', sans-serif;
-            font-weight: 300;
-        }
+      * {
+        font-family: "JetBrains Mono", sans-serif;
+        font-weight: 300;
+      }
 
-        h1,
-        h2,
-        h3 {
-            /* A custom pixel-style font imported from Google Fonts */
-            /* system-ui - A fallback font that uses the default system font */
-            font-family: "Press Start 2P", system-ui;
-        }
+      h1,
+      h2,
+      h3 {
+        /* A custom pixel-style font imported from Google Fonts */
+        /* system-ui - A fallback font that uses the default system font */
+        font-family: "Press Start 2P", system-ui;
+      }
 
-        .blueShadow {
-            /* blue shadow around buttons */
-            box-shadow: 0px 14px 55px rgba(96, 160, 255, 0.433);
-        }
+      .blueShadow {
+        /* blue shadow around buttons */
+        box-shadow: 0px 14px 55px rgba(96, 160, 255, 0.433);
+      }
 
-        .lightShadow {
-            position: relative;
-            overflow: hidden;
-        }
+      .lightShadow {
+        position: relative;
+        overflow: hidden;
+      }
 
-        .lightShadow p {
-            position: relative;
-            z-index: 2;
-        }
+      .lightShadow p {
+        position: relative;
+        z-index: 2;
+      }
 
-        .lightShadow::after {
-            /* custom background shadow that goes from left to right */
-            position: absolute;
-            content: '';
-            background: navy;
-            opacity: 0.04;
-            width: 100%;
-            height: 100%;
-            /* makes the shadow cover the whole element & is not merily an underline */
-            top: 0;
-            right: 100%;
-            transition-duration: 200ms;
-            z-index: 0;
-        }
+      .lightShadow::after {
+        /* custom background shadow that goes from left to right */
+        position: absolute;
+        content: "";
+        background: navy;
+        opacity: 0.04;
+        width: 100%;
+        height: 100%;
+        /* makes the shadow cover the whole element & is not merily an underline */
+        top: 0;
+        right: 100%;
+        transition-duration: 200ms;
+        z-index: 0;
+      }
 
-        .lightShadow:hover::after {
-            /* the light shadow moves from left to right on hover */
-            transform: translateX(100%);
-        }
-
+      .lightShadow:hover::after {
+        /* the light shadow moves from left to right on hover */
+        transform: translateX(100%);
+      }
     </style>
-</head>
+  </head>
 
-<!-- different text sizes for different display screens -->
-<body class="relative text-sm sm:text-base text-sky-600">
+  <!-- different text sizes for different display screens -->
+  <body class="relative text-sm sm:text-base text-sky-600">
     <!-- place background-grid below the text -->
-    <div class="absolute inset-0 bgGrid z-[-1] opacity-50">
-    </div>
-
+    <div class="absolute inset-0 bgGrid z-[-1] opacity-50"></div>
 
     <!-- define header width + spacing + bg -->
-    <header class="sticky top-0 max-w-[1000px] w-full mx-auto p-4  sm:p-5.5 flex items-center justify-between gap-4 sm:gap-8 bg-white/20 backdrop-blur-[4px]">
-        <h1 class="">Crystalline</h1>
-        <!-- apply a rounded box around button with hover effect & blue shadow-->
-        <button class="px-6 py-3 lightShadow rounded-full bg-white cursor-pointer blueShadow font-medium">
-            <p>Book now</p>
-        </button>
+    <header
+      class="sticky top-0 max-w-[1000px] w-full mx-auto p-4 sm:p-5.5 flex items-center justify-between gap-4 sm:gap-8 bg-white/20 backdrop-blur-[4px]"
+    >
+      <h1 class="">Crystalline</h1>
+      <!-- apply a rounded box around button with hover effect & blue shadow-->
+      <button
+        class="px-6 py-3 lightShadow rounded-full bg-white cursor-pointer blueShadow font-medium"
+      >
+        <p>Book now</p>
+      </button>
     </header>
-
 
     <!-- make back-grid occupy the whole space -->
     <main id="app" class="min-h-screen flex flex-col">
+      <!-- similar width as header + spacing -->
+      <section
+        class="flex flex-col max-w-[1000px] w-full mx-auto p-8 gap-8 sm:py-14 md:py-20 md:gap-14"
+      >
+        <!-- size & center the text -->
+        <h2
+          class="font-bold text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-center"
+        >
+          Crystal Ball Science
+        </h2>
+        <!-- size & center the text -->
+        <p
+          class="mx-auto max-w-[800px] w-full text-base sm:text-lg md:text-xl text-center"
+        >
+          Science that predicts, explains, and inspires — your crystal ball into
+          the universe
+        </p>
 
-        <!-- similar width as header + spacing -->
-        <section class="flex flex-col max-w-[1000px] w-full mx-auto p-8 gap-8 sm:py-14 md:py-20 md:gap-14">
-            <!-- size & center the text -->
-            <h2 class="font-bold text-[1.6rem] sm:text-4xl md:text-5xl lg:text-6xl text-center">Pure Math Made Crystal Clear</h2>
-            <!-- size & center the text -->
-            <p class="mx-auto max-w-[800px] w-full text-base sm:text-lg md:text-xl text-center">Experience the euphoric high
-                of greater knowledge, deeper understanding and some wild math 🔥 
-            </p>
+        <!-- set buttons in column orientation + changing spacing -->
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4 sm:gap-8 sm:w-fit sm:mx-auto"
+        >
+          <!-- similar button as on header -->
+          <button
+            class="px-6 py-3 sm:px-10 sm:py-4 lightShadow rounded-full bg-white cursor-pointer blueShadow font-medium"
+          >
+            <!-- increasing text size -->
+            <p class="text-base sm:text-lg md:text-xl">Get Started</p>
+          </button>
+          <!-- similar button dimensions, different color -->
+          <button
+            class="px-6 py-3 sm:px10 sm:py-4 lightShadow rounded-full bg-sky-600 cursor-pointer blueShadow font-medium text-white"
+          >
+            <p class="text-base sm:text-lg md:text-xl">Talk to Us</p>
+          </button>
+        </div>
 
-            <!-- set buttons in column orientation + changing spacing -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 py-4 sm:gap-8 sm:w-fit sm:mx-auto">
-                <!-- similar button as on header -->
-                <button class="px-6 py-3 sm:px-10 sm:py-4 lightShadow rounded-full bg-white cursor-pointer blueShadow font-medium">
-                    <!-- increasing text size -->
-                    <p class="text-base sm:text-lg md:text-xl">Book now</p>
-                </button>
-                <!-- similar button dimensions, different color -->
-                <button class="px-6 py-3 sm:px10 sm:py-4 lightShadow rounded-full bg-sky-600 cursor-pointer blueShadow font-medium text-white">
-                    <p class="text-base sm:text-lg md:text-xl">Get in touch</p>
-                </button>
+        <div class="flex items-center gap-4 mx-auto text-base sm:text-lg">
+          <p>4.6</p>
+          <div class="flex items-center gap-0.5">
+            <i class="fa-solid fa-star text-amber-400"></i>
+            <i class="fa-solid fa-star text-amber-400"></i>
+            <i class="fa-solid fa-star text-amber-400"></i>
+            <i class="fa-solid fa-star text-amber-400"></i>
+            <div class="grid place-items-center relative">
+              <!--places item 50% from the top, minus 50% from bottom =so in middle; then to right end; items takes up 40% width-->
+              <div
+                class="flex justify-end absolute w-[40%] top-1/2 -translate-y-1/2 right-0 overflow-hidden"
+              >
+                <i class="fa-solid fa-star text-white"></i>
+              </div>
+              <i class="fa-solid fa-star text-amber-400"></i>
             </div>
-
-            <div class="flex items-center gap-4 mx-auto text-base sm:text-lg">
-                <p>4.6</p>
-                <div class="flex items-center gap-0.5">
-                    <i class="fa-solid fa-star text-amber-400"></i>
-                    <i class="fa-solid fa-star text-amber-400"></i>
-                    <i class="fa-solid fa-star text-amber-400"></i>
-                    <i class="fa-solid fa-star text-amber-400"></i>
-                    <div class="grid place-items-center relative">
-                        <!--places item 50% from the top, minus 50% from bottom =so in middle; then to right end; items takes up 40% width-->
-                        <div class="flex justify-end absolute w-[40%] top-1/2 -translate-y-1/2 right-0 overflow-hidden">
-                            <i class="fa-solid fa-star text-white"></i>
-                        </div>
-                        <i class="fa-solid fa-star text-amber-400"></i>
-                    </div>
-                </div>
-                <p>(250+)</p>
-            </div>
-
-        </section>
+          </div>
+          <p>(280+)</p>
+        </div>
+      </section>
     </main>
 
-
     <footer class="flex justify-center items-center py-10">
-        <p>Made with 💛</p>
+      <p>Made with 💛</p>
     </footer>
-</body>
-
+  </body>
 </html>
