@@ -86,6 +86,6 @@ Want to make it yours? Here's how:
 
 ## 🚀 Live Demo
 
-👉 [Crystalline](https://crystalline-math.netlify.app/)
+👉 [Crystalline](https://crystalline-science.netlify.app/)
 
 ---
