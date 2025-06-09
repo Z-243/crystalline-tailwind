@@ -84,8 +84,8 @@ Want to make it yours? Here's how:
 
 ---
 
-## 📜 License
+## 🚀 Live Demo
 
-Open for personal, educational, or portfolio use. Attribution appreciated but not required.
+👉 [Crystalline](https://crystalline-math.netlify.app/)
 
 ---
